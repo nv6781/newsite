@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Video Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="login-page">
+    <div class="login-box">
+      <h1>🎬 Welcome to AI Video Studio</h1>
+      <p>Create videos 100x faster using smart templates.</p>
+      <div id="g_id_onload"
+           data-client_id="YOUR_GOOGLE_CLIENT_ID"
+           data-context="signin"
+           data-ux_mode="popup"
+           data-callback="handleCredentialResponse"
+           data-auto_prompt="false">
+      </div>
+      <div class="g_id_signin"
+           data-type="standard"
+           data-shape="rectangular"
+           data-theme="outline"
+           data-text="signin_with"
+           data-size="large"
+           data-logo_alignment="left">
+      </div>
+    </div>
+  </div>
+
+  <!-- App Content -->
+  <div id="app-container" class="app-container hidden">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>🎬 AI Studio</h2>
+      </div>
+      <nav class="menu">
+        <a href="#" class="menu-item active" data-page="dashboard">🏠 Home</a>
+        <h4>Templates</h4>
+        <a href="#" class="menu-item" data-page="text-stories">📝 Text Stories</a>
+        <a href="#" class="menu-item" data-page="would-you-rather">❓ Would You Rather</a>
+        <a href="#" class="menu-item" data-page="reddit-video">👾 Reddit Video</a>
+        <a href="#" class="menu-item" data-page="ai-story">📚 AI Story Video</a>
+        <a href="#" class="menu-item" data-page="ai-captions">💬 AI Captions</a>
+        <a href="#" class="menu-item" data-page="split-video">✂️ Split Video</a>
+        <a href="#" class="menu-item" data-page="ai-voiceover">🎤 AI Voiceover</a>
+        <a href="#" class="menu-item" data-page="top5-video">🏆 Top 5 Video</a>
+        <a href="#" class="menu-item" data-page="twitter-video">🐦 Twitter Video</a>
+      </nav>
+
+      <div class="user-section">
+        <img id="user-photo" src="" alt="User photo" />
+        <p id="user-name">User</p>
+        <button class="logout-btn" id="logout-btn">Log Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      <div id="dashboard" class="page active">
+        <header>
+          <h1 id="welcome-text">Good morning 👋</h1>
+          <p>Choose a template to start creating videos faster with AI.</p>
+        </header>
+
+        <section class="tools-grid">
+          <div class="tool-card">
+            <h3>AI Image Generator</h3>
+            <p>Generate visuals instantly.</p>
+            <button>Try Now</button>
+          </div>
+          <div class="tool-card">
+            <h3>Video Compressor</h3>
+            <p>Reduce file size for uploads.</p>
+            <button>Use Tool</button>
+          </div>
+          <div class="tool-card">
+            <h3>Video Trimmer</h3>
+            <p>Cut and trim clips easily.</p>
+            <button>Start Trimming</button>
+          </div>
+        </section>
+
+        <h2>Trending Templates</h2>
+        <div class="template-grid">
+          <div class="template-card">Top 5 Video</div>
+          <div class="template-card">AI Story</div>
+          <div class="template-card">Would You Rather</div>
+          <div class="template-card">Reddit Story</div>
+        </div>
+      </div>
+
+      <div id="template-view" class="page"></div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
